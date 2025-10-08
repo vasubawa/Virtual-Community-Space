@@ -3,56 +3,35 @@ import '../css/Event.css'
 
 const Event = (props) => {
 
-    const [event, setEvent] = useState([])
-    const [time, setTime] = useState([])
-    const [remaining, setRemaining] = useState([])
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const eventData = await EventsAPI.getEventsById(props.id)
-                setEvent(eventData)
-            }
-            catch (error) {
-                throw error
-            }
-        }) ()
-    }, [])
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const result = await dates.formatTime(event.time)
-                setTime(result)
-            }
-            catch (error) {
-                throw error
-            }
-        }) ()
-    }, [event])
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const timeRemaining = await dates.formatRemainingTime(event.remaining)
-                setRemaining(timeRemaining)
-                dates.formatNegativeTimeRemaining(remaining, event.id)
-            }
-            catch (error) {
-                throw error
-            }
-        }) ()
-    }, [event])
+    const event = {
+        id: props.id,
+        title: props.title,
+        date: props.date,
+        image: props.image,
+        description: props.description
+    }
+    
+        function formatEventDate(dateString) {
+            const date = new Date(dateString);
+            const options = { month: 'short', day: 'numeric' };
+            const monthDay = date.toLocaleDateString(undefined, options);
+            let hours = date.getHours();
+            const minutes = date.getMinutes();
+            const ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            return `${monthDay} @ ${hours}${minutes === 0 ? '' : ':' + minutes}${ampm}`;
+        }
 
     return (
         <article className='event-information'>
-            <img src={event.image} />
+            <img src={event.image} alt={event.title} />
 
             <div className='event-information-overlay'>
                 <div className='text'>
                     <h3>{event.title}</h3>
-                    <p><i className="fa-regular fa-calendar fa-bounce"></i> {event.date} <br /> {time}</p>
-                    <p id={`remaining-${event.id}`}>{remaining}</p>
+                        <p><i className="fa-regular fa-calendar fa-bounce"></i> {formatEventDate(event.date)}</p>
+                    <p>{event.description}</p>
                 </div>
             </div>
         </article>
