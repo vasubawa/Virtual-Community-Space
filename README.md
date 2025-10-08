@@ -32,6 +32,8 @@ Here's a walkthrough of implemented required features:
 
 ![Video Walkthrough](https://i.imgur.com/qgHmrXd.gif)
 
+https://i.imgur.com/qgHmrXd.gif
+
 GIF created with ...  GIF tool here
 [ScreenToGif](https://www.screentogif.com/) for Windows
 
