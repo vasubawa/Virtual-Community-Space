@@ -1,8 +1,8 @@
 # web103_unit3_project# WEB103 Project 3 - *Name of App Here*
 
-Submitted by: **Your name here**
+Submitted by: **Dhruv Sharma**
 
-About this web app: **App description here**
+About this web app: A virtual community space themed as a dungeon crawler hub. Explore fantasy locations, view upcoming events, and recruit adventurers for quests.
 
 Time spent: **4** hours
 
@@ -30,7 +30,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](https://i.imgur.com/qgHmrXd.gif)
 
 GIF created with ...  GIF tool here
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -42,7 +42,7 @@ Describe any challenges encountered while building the app or any additional con
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2025] [Dhruv Sharma]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
